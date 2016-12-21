@@ -1,9 +1,15 @@
 NAME = go-chat
 
+all: clean deps build run
+
+deps:
+	mkdir -p _logs
+	glide install
+
 build:
 	go build -o $(NAME)
 
-run: build
+run: 
 	./$(NAME)
 
 kafka-up:
@@ -11,8 +17,9 @@ kafka-up:
 
 kafka-down:
 	docker-compose -f docker-compose-kafka-single.yml down
+
 clean:
-	rm $(HOME)/.credentials/go-chat.sainbsurys.co.uk.json
+	rm -f $(HOME)/.credentials/go-chat.sainbsurys.co.uk.json
 
 test: kafka-up
-	go test -race -cover -v $(shell glide novendor)
+	go test -race -cover -v $(shell glide nv)

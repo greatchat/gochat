@@ -6,3 +6,4 @@ import:
   subpackages:
   - cache
 - package: github.com/pkg/errors
+- package: github.com/tendermint/go-p2p
