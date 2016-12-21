@@ -1,0 +1,8 @@
+package: github.com/JSainsburyPLC/manchester-hackathon/xmas-2016/go-chat
+import:
+- package: github.com/Shopify/sarama
+- package: github.com/Sirupsen/logrus
+- package: github.com/edoardo849/plex-google-sheets
+  subpackages:
+  - cache
+- package: github.com/pkg/errors
